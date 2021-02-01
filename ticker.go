@@ -25,8 +25,8 @@ func main() {
 	}
 
 	var m []Message
-	array, _ := ioutil.ReadAll(response.Body)
-	fmt.Println(string(array))
-	json.Unmarshal(array, &m)
+	responseBody, _ := ioutil.ReadAll(response.Body)
+	fmt.Println(string(responseBody))
+	json.Unmarshal(responseBody, &m)
 	fmt.Printf("%s: %f\n", m[0].Symbol, m[0].Price)
 }
